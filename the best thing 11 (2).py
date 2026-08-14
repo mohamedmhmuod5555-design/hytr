@@ -130,8 +130,8 @@ else:
  if st.button("أبدأ التحدي"):
   nu=st.empty()
   for n in range(60,-1,-1):
-  time.sleep(1)
-  st.write(nu)
+   time.sleep(1)
+   st.write(nu)
   st.write(num1,sign,num2)
   number=st.number_input("ادخل النتيجه ",step=1)
   if st.button("تأكيد الاجابه"):
