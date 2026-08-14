@@ -128,14 +128,14 @@ else:
  if sign=='/':
   sc=num1//num2 
  st.title("تحدي 60 ثانيه ")
- if st.button("أبدأ التحدي"):
+ 
   st.toast("هيا في تحدي 60 ثانيه ")
  
   time1=st.progress(100)
   for sec in range (60,-1,-1):
     time.sleep(1)
     percentage=(int(sec*100)/60)
-    time1.progress(percentage,"الثواني المتبقيه تكون ", sec)
+    time1.progress(percentage,text=f" الثواني المتبقيه {sec}")
     
   
   st.write(num1,sign,num2)
