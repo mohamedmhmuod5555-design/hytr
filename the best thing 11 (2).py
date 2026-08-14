@@ -133,8 +133,9 @@ else:
   ty=st.empty()
   time1=st.progress(100)
   for sec in range (60,-1,-1):
-    ty=st.progress(int(60/sec)*100)
     time.sleep(1)
+    ty=st.progress(int(60/sec)*100)
+    
   
   st.write(num1,sign,num2)
   number=st.number_input("ادخل النتيجه ",step=1)
