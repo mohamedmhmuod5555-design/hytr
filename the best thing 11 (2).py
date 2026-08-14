@@ -32,7 +32,7 @@ if 'feed' not in st.session_state:
  st.session_state.feed=0
 if 'hearts' not in st.session_state:
  st.session_state.hearts=3
-menu=st.sidebar.radio("الصفحه لرئيسية", ["ألعب و أصل لليفلات مختلفه ","تحدي كم سؤال تستطيع حله في 60 ثانيه"])
+menu=st.sidebar.radio("الصفحه لرئيسية", ["ألعب و أصل لليفلات مختلفه","تحدي كم سؤال تستطيع حله في 60 ثانيه"])
 if menu=="ألعب وأصل لليفلات مختلفه":
   num1 = st.session_state.num1
   num2 = st.session_state.num2
