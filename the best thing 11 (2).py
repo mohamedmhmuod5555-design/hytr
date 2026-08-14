@@ -130,9 +130,10 @@ else:
  st.title("تحدي 60 ثانيه ")
  if st.button("أبدأ التحدي"):
   st.toast("هيا في تحدي 60 ثانيه ")
+  ty=st.empty()
   time1=st.progress(100)
   for sec in range (60,-1,-1):
-    st.progress(int(60/sec)*100)
+    ty=st.progress(int(60/sec)*100)
     time.sleep(1)
   
   st.write(num1,sign,num2)
