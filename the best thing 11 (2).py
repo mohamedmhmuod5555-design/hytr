@@ -87,9 +87,9 @@ if menu=="ألعب و اصل لليفلات مختلفه":
       st.session_state.hearts=3
       with open("level_code1.txt","w") as f:
        f.write(str(st.session_state.level))
-else:
-  st.write("good")
+
  st.write("your points are " ,st.session_state.num,"from",st.session_state.count,"Questions" )
  st.write("you are in level",int(st.session_state.level))
  st.write("الارواح الحاليه ","❤️ "*st.session_state.hearts)
- 
+else:
+  st.write("hhgyu")
