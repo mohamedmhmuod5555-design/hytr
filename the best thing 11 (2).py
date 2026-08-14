@@ -135,7 +135,7 @@ else:
   for sec in range (60,-1,-1):
     time.sleep(1)
     percentage=(int(sec/60)*100)
-    time1.progress(percentage)
+    time1.progress(percentage,"الثواني المتبقيه تكون ", sec)
     
   
   st.write(num1,sign,num2)
