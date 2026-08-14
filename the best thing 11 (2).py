@@ -48,7 +48,7 @@ if menu=="play and reach to levels":
   st.title("Welcome to math game")
   st.write(num1,sign,num2)
   number=st.number_input("ادخل النتيجه ",step=1)
-   if st.button("تأكيد الاجابه "):
+  if st.button("تأكيد الاجابه "):
     st.session_state.count += 1
     if number == sc:
      st.session_state.num += 1
