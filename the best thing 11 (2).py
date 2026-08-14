@@ -3,8 +3,8 @@ import time
 import os
 import streamlit as st
 if 'level' not in st.session_state:
-  if os.path.exists("level_code.txt"):
-   with open("level_code.txt","r") as f:
+  if os.path.exists("level_code1.txt"):
+   with open("level_code1.txt","r") as f:
      rf= f.read().strip()
      if rf ==""or rf=="0" or rf=="0.0":
       file=1
@@ -84,7 +84,7 @@ if st.session_state.num > 0 and st.session_state.num % 10 == 0:
      st.session_state.ran+=20
      st.session_state.num=0
      st.session_state.count=0
-     with open("level_code.txt","w") as f:
+     with open("level_code1.txt","w") as f:
       f.write(str(st.session_state.level))
 st.write("your points are " ,st.session_state.num,"from",st.session_state.count,"Questions" )
 st.write("you are in level",int(st.session_state.level))
