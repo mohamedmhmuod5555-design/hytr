@@ -2,7 +2,6 @@ import random
 import time
 import os
 import streamlit as st
-
 if 'level' not in st.session_state:
   if os.path.exists("level_code1.txt"):
    with open("level_code1.txt","r") as f:
@@ -116,6 +115,7 @@ else:
  if 'feed' not in st.session_state:
   st.session_state.feed=0
 
+
  num1 = st.session_state.num1
  num2 = st.session_state.num2
  sign = st.session_state.sign
@@ -128,19 +128,15 @@ else:
  if sign=='/':
   sc=num1//num2 
  st.title("تحدي 60 ثانيه ")
- 
  if st.button("أبدأ التحدي"):
   st.toast("هيا في تحدي 60 ثانيه ")
-  
-  # الحل هنا: ننشئ شريط التايمر الأساسي مرة واحدة فقط
-  time1 = st.progress(100)
-  
+ 
+  time1=st.progress(100)
   for sec in range (60,-1,-1):
     time.sleep(1)
-    # الحسبة الصحيحة لإنقاص النسبة المئوية وتحديث نفس الشريط "time1" لتفادي تكرار الخطوط الزرقاء
-    نسبة_الشريط = int((sec / 60) * 100)
-    time1.progress(نسبة_الشريط, text=f"⏳ متبقي {sec} ثانية")
+    ty=time1.(int(sec/60)*100)
     
+  
   st.write(num1,sign,num2)
   number=st.number_input("ادخل النتيجه ",step=1)
   if st.button("تأكيد الاجابه"):
@@ -168,12 +164,6 @@ else:
     time.sleep(1)
     st.rerun()
 
-  if st.session_state.num > 0 and st.session_state.num % 10 == 0:
-    st.success("انت بطل! تحدي صديقك انه بالطبع لن يستطيع ان يصل لمستواك  ")
-    if st.button("الليفل التالي "):
-       st.balloons()
-       st.session_state.num=0
-       st.session_state.count=0
-       with open("level_number.txt","w") as f:
-        f.write(str(st.session_state.level))
+  
   st.write("your points are " ,st.session_state.num,"from",st.session_state.count,"Questions" )
+ 
