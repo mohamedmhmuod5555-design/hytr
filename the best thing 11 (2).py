@@ -84,6 +84,7 @@ if st.session_state.num > 0 and st.session_state.num % 10 == 0:
      st.session_state.ran+=20
      st.session_state.num=0
      st.session_state.count=0
+     st.session_state.hearts=3
      with open("level_code1.txt","w") as f:
       f.write(str(st.session_state.level))
 st.write("your points are " ,st.session_state.num,"from",st.session_state.count,"Questions" )
