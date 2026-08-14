@@ -2,7 +2,6 @@ import random
 import time
 import os
 import streamlit as st
-
 if 'level' not in st.session_state:
   if os.path.exists("level_code1.txt"):
    with open("level_code1.txt","r") as f:
@@ -34,69 +33,60 @@ if 'feed' not in st.session_state:
 if 'hearts' not in st.session_state:
  st.session_state.hearts=3
 
-# ----------------- [إضافة القائمة الجانبية هنا بأسهل طريقة] -----------------
-menu = st.sidebar.radio("القائمة الرئيسية", ["🎮 إبدأ اللعب", "ℹ️ عن اللعبة"])
 
-if menu == "ℹ️ عن اللعبة":
-    st.title("ℹ️ عن لعبة الرياضيات")
-    st.write("مرحباً بك! هذه اللعبة مصممة لاختبار مهاراتك الحسابية وسرعة بديهتك.")
-    st.write("كلما أجبت بشكل صحيح زادت نقاطك، وعند الوصول لـ 10 نقاط تنتقل للمستوى التالي ويصبح التحدي أصعب!")
-    st.info("طور هذا التطبيق باستخدام Streamlit ✨")
-
-else:
-    # ----------------- [هنا كود اللعبة الخاص بك كما هو تماماً] -----------------
-    num1 = st.session_state.num1
-    num2 = st.session_state.num2
-    sign = st.session_state.sign
-    if sign=='+':
-     sc=num1+num2
-    if sign=='-':
-     sc=num1-num2
-    if sign=='*':
-     sc=num1*num2
-    if sign=='/':
-     sc=num1//num2 
-    st.title("Welcome to math game")
-    st.write(num1,sign,num2)
-    number=st.number_input("ادخل النتيجه ",step=1)
-    if st.button("تأكيد التخمين "):
-      st.session_state.count += 1
-      if number == sc:
-       st.session_state.num += 1
-       st.session_state.feed="correct"
-      else:
-       st.session_state.hearts-=1
-       st.session_state.feed="false" 
-    if st.session_state.feed=="correct":
-      st.success("  انك اسطوره يا عبقري الرياضه ")
-      st.balloons()
-      st.session_state.feed=None
-      st.session_state.num1=random.randint(1,int(st.session_state.ran))
-      st.session_state.num2=random.randint(1,int(st.session_state.ran))
-      st.session_state.sign=random.choice(['+','-','*','/'])
-      time.sleep(1)
-      st.rerun()
-    if st.session_state.feed=="false":
-      st.error(f"اجابتك خاطئة! الإجابة الصحيحة كانت : {sc}")
-      st.session_state.feed=None
-      st.session_state.num1=random.randint(1,int(st.session_state.ran))
-      st.session_state.num2=random.randint(1,int(st.session_state.ran))
-      st.session_state.sign=random.choice(['+','-','*','/'])
-      time.sleep(1)
-      st.rerun()
-    if st.session_state.hearts ==0:
-     st.error("للاسف انتهت المحاولات ") 
+num1 = st.session_state.num1
+num2 = st.session_state.num2
+sign = st.session_state.sign
+if sign=='+':
+ sc=num1+num2
+if sign=='-':
+ sc=num1-num2
+if sign=='*':
+ sc=num1*num2
+if sign=='/':
+ sc=num1//num2 
+st.title("Welcome to math game")
+st.write(num1,sign,num2)
+number=st.number_input("ادخل النتيجه ",step=1)
+if st.button("تأكيد التخمين "):
+  st.session_state.count += 1
+  if number == sc:
+   st.session_state.num += 1
+   st.session_state.feed="correct"
+  else:
+   st.session_state.hearts-=1
+   st.session_state.feed="false" 
+if st.session_state.feed=="correct":
+  st.success("  انك اسطوره يا عبقري الرياضه ")
+  st.balloons()
+  st.session_state.feed=None
+  st.session_state.num1=random.randint(1,int(st.session_state.ran))
+  st.session_state.num2=random.randint(1,int(st.session_state.ran))
+  st.session_state.sign=random.choice(['+','-','*','/'])
+  time.sleep(1)
+  st.rerun()
+if st.session_state.feed=="false":
+  st.error(f"اجابتك خاطئة! الإجابة الصحيحة كانت : {sc}")
+  st.session_state.feed=None
+  st.session_state.num1=random.randint(1,int(st.session_state.ran))
+  st.session_state.num2=random.randint(1,int(st.session_state.ran))
+  st.session_state.sign=random.choice(['+','-','*','/'])
+  time.sleep(1)
+  st.rerun()
+if st.session_state.hearts ==0:
+ st.error("للاسف انتهت المحاولات ") 
+ st.session_state.num=0
+if st.session_state.num > 0 and st.session_state.num % 10 == 0:
+  st.success("انت بطل! تحدي صديقك انه بالطبع لن يستطيع ان يصل لمستواك  ")
+  if st.button("الليفل التالي "):
+     st.balloons()
+     st.session_state.level+=1
+     st.session_state.ran+=20
      st.session_state.num=0
-    if st.session_state.num > 0 and st.session_state.num % 10 == 0:
-      st.success("انت بطل! تحدي صديقك انه بالطبع لن يستطيع ان يصل لمستواك  ")
-      if st.button("الليفل التالي "):
-         st.balloons()
-         st.session_state.level+=1
-         st.session_state.ran+=20
-         st.session_state.num=0
-         st.session_state.count=0
-         st.session_state.hearts=3
-         with open("level_code1.txt","w") as f:
-          f.write(str(st.session_state.level))
-    st.write("your points are " ,st.session_state.num,"from",st.session_state.count,"Questions" )
-    st.write("you are in level",int(st.session_state.level))
+     st.session_state.count=0
+     st.session_state.hearts=3
+     with open("level_code1.txt","w") as f:
+      f.write(str(st.session_state.level))
+st.write("your points are " ,st.session_state.num,"from",st.session_state.count,"Questions" )
+st.write("you are in level",int(st.session_state.level))
+st.write("الارواح الحاليه ","❤️ "*st.session_state.hearts)
