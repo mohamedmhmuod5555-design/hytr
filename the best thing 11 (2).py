@@ -129,7 +129,7 @@ else:
   sc=num1//num2 
  st.title("تحدي 60 ثانيه ")
  
-  st.toast("هيا في تحدي 60 ثانيه ")
+ st.toast("هيا في تحدي 60 ثانيه ")
  
   time1=st.progress(100)
   for sec in range (60,-1,-1):
