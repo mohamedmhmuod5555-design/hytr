@@ -129,7 +129,8 @@ else:
   sc=num1//num2 
  st.title("تحدي 60 ثانيه ")
  if st.button("أبدأ التحدي"):
-  nu=st.empty()
+  st.toast("هيا في تحدي 60 ثانيه ")
+  st.progress()
   for n in range(60,-1,-1):
    time.sleep(1)
    st.write(nu)
