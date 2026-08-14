@@ -80,7 +80,8 @@ if st.session_state.num > 0 and st.session_state.num % 10 == 0:
   st.success("انت بطل! تحدي صديقك انه بالطبع لن يستطيع ان يصل لمستواك  ")
   if st.button("الليفل التالي "):
      st.balloons()
-     st.session_state.level+=20
+     st.session_state.level+=1
+     st.session_state.ran+=20
      st.session_state.num=0
      st.session_state.count=0
      with open("level_code.txt","w") as f:
