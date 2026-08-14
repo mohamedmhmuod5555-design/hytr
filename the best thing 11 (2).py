@@ -132,7 +132,7 @@ else:
  if st.button("أبدأ التحدي"):
   nu=st.empty()
   for n in range(60):
-   nu-=1
+   n-=1
    st.sleep(1)
    st.write(nu)
   st.write(num1,sign,num2)
