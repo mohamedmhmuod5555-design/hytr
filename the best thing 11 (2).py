@@ -133,7 +133,7 @@ else:
   nu=st.empty()
   for n in range(60):
    n-=1
-   st.sleep(1)
+  time.sleep(1)
    st.write(nu)
   st.write(num1,sign,num2)
   number=st.number_input("ادخل النتيجه ",step=1)
