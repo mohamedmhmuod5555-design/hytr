@@ -135,7 +135,7 @@ else:
   for sec in range (60,-1,-1):
     time.sleep(1)
     ty=(int(sec/60)*100)
-    gtu=time1(ty)
+    gtu=time1.progress(ty)
     
   
   st.write(num1,sign,num2)
