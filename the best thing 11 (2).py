@@ -130,7 +130,7 @@ else:
  st.title("تحدي 60 ثانيه ")
  if st.button("أبدأ التحدي"):
   st.toast("هيا في تحدي 60 ثانيه ")
-  st.progress(100)
+  time1=st.progress(100)
   
   
   
