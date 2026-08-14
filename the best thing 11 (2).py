@@ -32,7 +32,7 @@ if 'feed' not in st.session_state:
  st.session_state.feed=0
 if 'hearts' not in st.session_state:
  st.session_state.hearts=3
-menu=st.sidebar.radio("ألعب و اصل لليفلات مختلفه ")
+menu=st.sidebar.radio("ألعب و اصل لليفلات مختلفه ","hgytr")
 if menu=="ألعب و اصل لليفلات مختلفه":
  num1 = st.session_state.num1
  num2 = st.session_state.num2
@@ -87,6 +87,8 @@ if menu=="ألعب و اصل لليفلات مختلفه":
       st.session_state.hearts=3
       with open("level_code1.txt","w") as f:
        f.write(str(st.session_state.level))
+else:
+  st.write("good")
  st.write("your points are " ,st.session_state.num,"from",st.session_state.count,"Questions" )
  st.write("you are in level",int(st.session_state.level))
  st.write("الارواح الحاليه ","❤️ "*st.session_state.hearts)
