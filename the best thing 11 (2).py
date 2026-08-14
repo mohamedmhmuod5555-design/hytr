@@ -33,7 +33,7 @@ if 'feed' not in st.session_state:
 if 'hearts' not in st.session_state:
  st.session_state.hearts=3
 menu=st.sidebar.radio("  play and reach to levels","hgytr")
-if menu=="ألعب و اصل لليفلات مختلفه":
+if menu=="play and reach to levels":
  num1 = st.session_state.num1
  num2 = st.session_state.num2
  sign = st.session_state.sign
