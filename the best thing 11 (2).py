@@ -97,8 +97,6 @@ else:
  import random
  import time
  import streamlit as st
- if 'level' not in st.session_state:
-   st.session_state.level=0
  if 'ran' not in st.session_state or st.session_state.ran < 1:
    st.session_state.ran=int(20*st.session_state.level)
  if 'num' not in st.session_state:
@@ -134,7 +132,7 @@ else:
   for n in range(60):
    n-=1
   time.sleep(1)
-   st.write(nu)
+  st.write(nu)
   st.write(num1,sign,num2)
   number=st.number_input("ادخل النتيجه ",step=1)
   if st.button("تأكيد الاجابه"):
@@ -166,7 +164,6 @@ else:
     st.success("انت بطل! تحدي صديقك انه بالطبع لن يستطيع ان يصل لمستواك  ")
     if st.button("الليفل التالي "):
        st.balloons()
-       st.session_state.level+=1
        st.session_state.num=0
        st.session_state.count=0
        with open("level_number.txt","w") as f:
