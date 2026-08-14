@@ -57,7 +57,7 @@ if st.button("تأكيد التخمين "):
    st.session_state.hearts-=1
    st.session_state.feed="false" 
 if st.session_state.feed=="correct":
-  st.success(" لقد زودت عملتك الذهبيه ب واحد انك اسطوره يا عبقري الرياضه ")
+  st.success("  انك اسطوره يا عبقري الرياضه ")
   st.balloons()
   st.session_state.feed=None
   st.session_state.num1=random.randint(1,int(st.session_state.ran))
