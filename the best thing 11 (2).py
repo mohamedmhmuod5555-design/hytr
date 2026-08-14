@@ -130,10 +130,10 @@ else:
  st.title("تحدي 60 ثانيه ")
  if st.button("أبدأ التحدي"):
   st.toast("هيا في تحدي 60 ثانيه ")
-  st.progress()
-  for n in range(60,-1,-1):
-   time.sleep(1)
-   st.write(nu)
+  st.progress(100)
+  
+  
+  
   st.write(num1,sign,num2)
   number=st.number_input("ادخل النتيجه ",step=1)
   if st.button("تأكيد الاجابه"):
