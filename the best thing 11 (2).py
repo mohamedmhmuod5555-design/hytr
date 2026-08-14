@@ -131,14 +131,14 @@ else:
  
  st.toast("هيا في تحدي 60 ثانيه ")
  
- st.write(num1,sign,num2)
+
  time1=st.progress(100)
  for sec in range (60,-1,-1):
    time.sleep(1)
    percentage=(float(sec/60))
    time1.progress(percentage,text=f" الثواني المتبقيه {sec}")
     
-  
+  st.write(num1,sign,num2)
  number=st.number_input("ادخل النتيجه ",step=1)
  if st.button("تأكيد الاجابه"):
    st.session_state.count += 1
