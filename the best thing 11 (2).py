@@ -134,7 +134,7 @@ else:
  time1=st.progress(100)
  for sec in range (60,-1,-1):
    time.sleep(1)
-   percentage=(float(sec/60)*100)
+   percentage=(float(sec/60))
    time1.progress(percentage,text=f" الثواني المتبقيه {sec}")
     
   
