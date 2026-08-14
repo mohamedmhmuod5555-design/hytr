@@ -134,8 +134,8 @@ else:
   time1=st.progress(100)
   for sec in range (60,-1,-1):
     time.sleep(1)
-    ty=(int(sec/60)*100)
-    gtu=time1.progress(ty)
+    percentage=(int(sec/60)*100)
+    time1.progress(percentage)
     
   
   st.write(num1,sign,num2)
