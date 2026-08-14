@@ -129,8 +129,7 @@ else:
  st.title("تحدي 60 ثانيه ")
  if st.button("أبدأ التحدي"):
   nu=st.empty()
-  for n in range(60):
-   n-=1
+  for n in range(60,-1,-1):
   time.sleep(1)
   st.write(nu)
   st.write(num1,sign,num2)
