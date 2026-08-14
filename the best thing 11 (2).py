@@ -131,40 +131,40 @@ else:
  
  st.toast("هيا في تحدي 60 ثانيه ")
  
-  time1=st.progress(100)
-  for sec in range (60,-1,-1):
-    time.sleep(1)
-    percentage=(int(sec*100)/60)
-    time1.progress(percentage,text=f" الثواني المتبقيه {sec}")
+ time1=st.progress(100)
+ for sec in range (60,-1,-1):
+   time.sleep(1)
+   percentage=(int(sec*100)/60)
+   time1.progress(percentage,text=f" الثواني المتبقيه {sec}")
     
   
-  st.write(num1,sign,num2)
-  number=st.number_input("ادخل النتيجه ",step=1)
-  if st.button("تأكيد الاجابه"):
-    st.session_state.count += 1
-    if number == sc:
+ st.write(num1,sign,num2)
+ number=st.number_input("ادخل النتيجه ",step=1)
+ if st.button("تأكيد الاجابه"):
+   st.session_state.count += 1
+   if number == sc:
      st.session_state.num += 1
      st.session_state.feed="correct"
-    else:
+   else:
      st.session_state.feed="false" 
-  if st.session_state.feed=="correct":
-    st.success("انك اسطوره يا عبقري الرياضه ")
-    st.balloons()
-    st.session_state.feed=None
-    st.session_state.num1=random.randint(1,int(st.session_state.ran))
-    st.session_state.num2=random.randint(1,int(st.session_state.ran))
-    st.session_state.sign=random.choice(['+','-','*','/'])
-    time.sleep(1)
-    st.rerun()
-  if st.session_state.feed=="false":
-    st.error(f"اجابتك خاطئة! الإجابة الصحيحة كانت : {sc}")
-    st.session_state.feed=None
-    st.session_state.num1=random.randint(1,int(st.session_state.ran))
-    st.session_state.num2=random.randint(1,int(st.session_state.ran))
-    st.session_state.sign=random.choice(['+','-','*','/'])
-    time.sleep(1)
-    st.rerun()
+ if st.session_state.feed=="correct":
+   st.success("انك اسطوره يا عبقري الرياضه ")
+   st.balloons()
+   st.session_state.feed=None
+   st.session_state.num1=random.randint(1,int(st.session_state.ran))
+   st.session_state.num2=random.randint(1,int(st.session_state.ran))
+   st.session_state.sign=random.choice(['+','-','*','/'])
+   time.sleep(1)
+   st.rerun()
+ if st.session_state.feed=="false":
+   st.error(f"اجابتك خاطئة! الإجابة الصحيحة كانت : {sc}")
+   st.session_state.feed=None
+   st.session_state.num1=random.randint(1,int(st.session_state.ran))
+   st.session_state.num2=random.randint(1,int(st.session_state.ran))
+   st.session_state.sign=random.choice(['+','-','*','/'])
+   time.sleep(1)
+   st.rerun()
 
   
-  st.write("your points are " ,st.session_state.num,"from",st.session_state.count,"Questions" )
+ st.write("your points are " ,st.session_state.num,"from",st.session_state.count,"Questions" )
  
